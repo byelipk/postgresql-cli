@@ -25,3 +25,9 @@ postgres`. A shorter form of would be `psql postgres`.
 All that is going on here is that we are invoking the `psql` command as the root
 user in order to connect to the database that PG created especially for the
 `SUPERUSER`.
+
+### Viewing all roles
+Once you log in you can run `\dg` to view all roles and their permissions.
+
+### Viewing all databases
+You can run `\l` to get a list of all databases.
