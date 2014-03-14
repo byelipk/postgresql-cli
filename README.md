@@ -51,5 +51,16 @@ might write the following SQL: `CREATE ROLE rails_app CREATEDB LOGIN PASSWORD 'r
         | CREATEUSER | NOCREATEUSER
         | LOGIN | NOLOGIN
 
+### Logging in with a newly created role
+To log into psql with your newly created role, you can type the following into
+your terminal: `psql -U rails_app -W rails_app_development`
+
+Let's break this down. You'll see it's pretty simple. The `-U` flag allows to 
+enter a user name so that we do not end up trying to connect as the superuser -
+which is not a best pactice as it is a security risk! The `-W` flag means that 
+psql will prompt us for our password before logging us into the database. 
+Finally we pass in the name of the database at the end of the command.
+
+
 ### Viewing all databases
 You can run `\l` to get a list of all databases.
