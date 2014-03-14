@@ -27,7 +27,8 @@ user in order to connect to the database that PG created especially for the
 `SUPERUSER`.
 
 ### Viewing all roles
-Once you log in you can run `\dg` to view all roles and their permissions.
+Once you log in you can run `\dg` to view all roles and their permissions. Roles
+are synonymous with 'users'.
 
 ### Viewing all databases
 You can run `\l` to get a list of all databases.
