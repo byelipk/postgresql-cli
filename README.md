@@ -30,5 +30,26 @@ user in order to connect to the database that PG created especially for the
 Once you log in you can run `\dg` to view all roles and their permissions. Roles
 are synonymous with 'users'.
 
+### Creating a new role
+The SQL to create a new role is faily simple. We just type `CREATE ROLE
+new_role` then pass in any permissions we wish to grant to the new role. So if I
+wanted to create a new superuser role, the SQL would be as follows: `CREATE ROLE
+new_su SUPERUSER`. Pretty simple.
+
+If you are working on a rails app and you want to use a PG datastore, you might
+need to create a new role with the ability to create a database (i.e. for a rake
+command like `rake db:create`), and that requires authentication. To do that you 
+might write the following SQL: `CREATE ROLE rails_app CREATEDB LOGIN PASSWORD 'rubyonrails'`.  
+
+    CREATE ROLE name [ [ WITH ] option [ ... ] ]
+
+    where option can be:
+
+    SUPERUSER | NOSUPERUSER
+        | CREATEDB | NOCREATEDB
+        | CREATEROLE | NOCREATEROLE
+        | CREATEUSER | NOCREATEUSER
+        | LOGIN | NOLOGIN
+
 ### Viewing all databases
 You can run `\l` to get a list of all databases.
