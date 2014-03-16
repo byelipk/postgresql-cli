@@ -68,8 +68,28 @@ You can run `\l` to get a list of all databases.
 ### Viewing database tables
 Run `\dt` to view all tables inside a databse.
 
+### Exporting data
+There are quite a few ways to export data using either the `pg_dump` utility
+that comes with postgres or PGAdmin III.
+
+`pg_dump` is really cool. The basic syntax is simple: `pg_dump daname > dump_file.sql`
+If you are using a Heroku database and want to export your sql, it's quite
+simple. However, first you need to grab your database's connection information.
+In the root directory of your heroku app run `heroky pg:credtentials
+DATABASE_URL` and copy the connection url because you are going to feed it to
+`pg_dump`. 
+
+You can now run `pg_dump your_connection_url > name_your_file.sql`. Simple!
+
+If you are inside PGAdmin III, you just need to click on your target database
+and select `backup`. If you want to save the backup as an sql file, make sure to
+output in `plain` formt, other wise outputting in `tar` formt is a good choice.
+
+
 ### Importing data
 Inside psql you can run `\i path_to_dataset` in order to import sql data into an
 *empty* database. PGAdmin III allows you to import .tar files, but not raw sql.
 So using the command line to import new data into an empty database is a very
 efficient alternative.
+
+
