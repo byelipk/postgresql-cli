@@ -73,9 +73,10 @@ There are quite a few ways to export data using either the `pg_dump` utility
 that comes with postgres or PGAdmin III.
 
 `pg_dump` is really cool. The basic syntax is simple: `pg_dump dbname > file.sql`
+
 If you are using a Heroku database and want to export your sql, it's quite
 simple. However, first you need to grab your database's connection information.
-In the root directory of your heroku app run `heroky pg:credtentials
+In the root directory of your heroku app run `heroku pg:credtentials
 DATABASE_URL` and copy the connection url because you are going to feed it to
 `pg_dump`. 
 
