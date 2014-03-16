@@ -64,3 +64,9 @@ Finally we pass in the name of the database at the end of the command.
 
 ### Viewing all databases
 You can run `\l` to get a list of all databases.
+
+### Importing data
+Inside psql you can run `\i path_to_dataset` in order to import sql data into an
+*empty* database. PGAdmin III allows you to import .tar files, but not raw sql.
+So using the command line to import new data into an empty database is a very
+efficient alternative.
